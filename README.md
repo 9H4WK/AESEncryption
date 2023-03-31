@@ -1,1 +1,2 @@
 # AESEncryption
+This C# project demonstrates how to use AES encryption to securely encrypt and decrypt data. It allows users to encrypt any string input using a secret key and save it to a file. The encrypted file can then be decrypted using the same secret key to retrieve the original string. The project showcases the use of the AesManaged class in the .NET framework to perform the encryption and decryption operations, and provides a simple and straightforward example of how to implement AES encryption in a C# application.
