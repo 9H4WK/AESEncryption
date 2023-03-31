@@ -6,14 +6,16 @@ namespace AESEncryption
     [Obsolete]
     internal class Encrypt
     {
+        private const string S = "Str0n6p@55w0rd";  //for debugging purposes
+
         // Aes encryption is used to encrypt the data
         public static byte[] AES_Encrypt(byte[] bytesToBeEncrypted, string EncodedPassword)
         {
             try
             {
 
-                // make passwordBytes array out of string H@rdH@tC2P@$$w0rd!
-                byte[] passwordBytes = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes("H@rdH@tC2P@$$w0rd!"));
+                // make passwordBytes array out of string S
+                byte[] passwordBytes = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(S));
                 //byte[] passwordBytes = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(EncodedPassword));
 
                 byte[] encryptedBytes = null;
@@ -54,8 +56,8 @@ namespace AESEncryption
             {
 
                 //Console.WriteLine($"decrypting {bytesToBeDecrypted.Length} bytes");
-                // make passwordBytes array out of string H@rdH@tC2P@$$w0rd!
-                byte[] passwordBytes = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes("H@rdH@tC2P@$$w0rd!"));
+                // make passwordBytes array out of string S
+                byte[] passwordBytes = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(S));
                 //byte[] passwordBytes = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(EncodedPassword));
 
                 byte[] decryptedBytes = null;
